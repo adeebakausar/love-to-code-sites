@@ -124,8 +124,6 @@ const ReviewUs = () => {
             </p>
           </div>
         )}
-      </main>
-      <Footer />
     </div>
   );
 };
