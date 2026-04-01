@@ -41,6 +41,7 @@ const App = () => (
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/service-areas" element={<ServiceAreas />} />
             <Route path="/service-areas/:area" element={<ServiceAreaDetail />} />
+            <Route path="/review-us" element={<ReviewUs />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
