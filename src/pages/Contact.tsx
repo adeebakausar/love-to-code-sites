@@ -1,5 +1,6 @@
 import HeroSection from "@/components/HeroSection";
 import QuoteForm from "@/components/QuoteForm";
+import ReviewsSection from "@/components/ReviewsSection";
 import treeServiceHero from "@/assets/tree-service-hero.jpg";
 import { Phone, MapPin, Clock } from "lucide-react";
 
@@ -49,6 +50,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
+      <ReviewsSection />
     </div>
   );
 };

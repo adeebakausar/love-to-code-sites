@@ -1,5 +1,6 @@
 import HeroSection from "@/components/HeroSection";
 import ServiceCard from "@/components/ServiceCard";
+import ReviewsSection from "@/components/ReviewsSection";
 import treeServiceHero from "@/assets/tree-service-hero.jpg";
 
 const LandClearing = () => {
@@ -32,6 +33,7 @@ const LandClearing = () => {
           </div>
         </div>
       </section>
+      <ReviewsSection />
     </div>
   );
 };

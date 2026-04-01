@@ -1,5 +1,6 @@
 import HeroSection from "@/components/HeroSection";
 import ServiceCard from "@/components/ServiceCard";
+import ReviewsSection from "@/components/ReviewsSection";
 import treeServiceHero from "@/assets/tree-service-hero.jpg";
 
 const Drainage = () => {
@@ -33,6 +34,7 @@ const Drainage = () => {
           </div>
         </div>
       </section>
+      <ReviewsSection />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import HeroSection from "@/components/HeroSection";
 import ServiceCard from "@/components/ServiceCard";
-import ReviewCard from "@/components/ReviewCard";
+import ReviewsSection from "@/components/ReviewsSection";
 import treeServiceHero from "@/assets/tree-service-hero.jpg";
 
 const treeServices = [
@@ -11,11 +11,6 @@ const treeServices = [
   { title: "Emergency Tree Services", description: "24/7 emergency tree removal and cleanup services across Lancaster County, Pennsylvania.", link: "/tree-service/emergency", iconKey: "emergency" },
 ];
 
-const reviews = [
-  { name: "Taylor S", text: "Cannot thank these guys enough for cutting down a huge oak directly behind my house and on a mountain, even with all the negatives surrounding the location these guys made it look easy!" },
-  { name: "Monica Flamini", text: "Highly recommend for any needed tree/stump removal services. The team was professional and made quick and efficient work of the very large pine tree we needed removed." },
-  { name: "Bill Loesel", text: "Cody and Casey were called in by our insurance agent - arrived less than 3 hours after the storm knocked most of a large tree into the driveway. Super knowledgeable about all things trees." },
-];
 
 const TreeService = () => {
   return (
@@ -69,18 +64,7 @@ const TreeService = () => {
         </div>
       </section>
 
-      {/* Reviews */}
-      <section className="section-padding">
-        <div className="container-wide">
-          <p className="font-heading text-sm uppercase tracking-widest text-primary text-center mb-2">Discover What Our Customers Have to Say</p>
-          <h2 className="font-heading text-3xl font-bold uppercase text-center text-foreground mb-12">Reviews</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {reviews.map((r, i) => (
-              <ReviewCard key={i} {...r} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <ReviewsSection />
     </div>
   );
 };

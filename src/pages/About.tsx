@@ -1,4 +1,5 @@
 import HeroSection from "@/components/HeroSection";
+import ReviewsSection from "@/components/ReviewsSection";
 import treeServiceHero from "@/assets/tree-service-hero.jpg";
 import aboutImg from "@/assets/about-image.jpg";
 
@@ -49,6 +50,7 @@ const About = () => {
           </div>
         </div>
       </section>
+      <ReviewsSection />
     </div>
   );
 };
