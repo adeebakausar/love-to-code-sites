@@ -37,16 +37,33 @@ const homeServices = [
 ];
 
 const galleryImages = [
-  { src: gallery1, alt: "Tree removal in Lancaster County, PA" },
-  { src: gallery2, alt: "Stump grinding in Lancaster County, PA" },
-  { src: gallery3, alt: "Land clearing project in Lancaster County, PA" },
-  { src: gallery4, alt: "Emergency tree removal in Lancaster County, PA" },
-  { src: gallery5, alt: "Tree pruning in Lancaster County, PA" },
-  { src: gallery6, alt: "Firewood stacking in Lancaster County, PA" },
-  { src: gallery7, alt: "Drainage installation in Lancaster County, PA" },
-  { src: gallery8, alt: "Land clearing with excavator in Lancaster County, PA" },
-  { src: gallery9, alt: "Completed tree service in Lancaster County, PA" },
-  { src: gallery10, alt: "Logging service in Lancaster County, PA" },
+  { src: gallery1, alt: "Tree removal in Berks County, PA" },
+  { src: gallery2, alt: "Tree removal in Berks County, PA" },
+  { src: gallery3, alt: "Tree removal in Berks County, PA" },
+  { src: gallery4, alt: "Tree removal in Berks County, PA" },
+  { src: gallery5, alt: "Tree removal in Berks County, PA" },
+  { src: gallery6, alt: "Tree service in Bucks County, PA" },
+  { src: gallery7, alt: "Tree service in Bucks County, PA" },
+  { src: gallery8, alt: "Tree service in Bucks County, PA" },
+  { src: gallery9, alt: "Tree service in Bucks County, PA" },
+  { src: gallery10, alt: "Tree service in Bucks County, PA" },
+];
+
+const googleReviews = [
+  { name: "Taylor S", text: "Cannot thank these guys enough for cutting down a huge oak directly behind my house and on a mountain, even with all the negatives surrounding the location these guys made it look easy!! Would recommend them for all of your tree needs!" },
+  { name: "Kau G", text: "Was very happy with Cody and his crew. They were very professional, had good communication to set up the work and completed everything perfectly as expected." },
+  { name: "Monica Flamini", text: "Highly recommend for any needed tree/stump removal services. The team was professional and made quick and efficient work of the very large pine tree we needed removed. Customer service was top tier with timely responses." },
+  { name: "Taurean", text: "BH Tree Service was a recommendation, and CODY did not disappoint! Amazing job, quick and professional service. Thank you too Melissa! They worked with my schedule and the price was affordable, easy pay methods!" },
+  { name: "Pat V", text: "Cody did a great job removing a very large tree near my house. They worked quickly and efficiently wrapping up the job in only 2 hours. They cleaned up everything before they left so it was like they were never there." },
+  { name: "Bob Powers", text: "Cody and his Team did a TERRIFIC job. Cody is very knowledgeable, very honest, and very hard working. Integrity and Honesty mean a great deal to me. Cody did exactly what he promised to do at a very fair price." },
+  { name: "Chris Nosser", text: "Cody and team always come through for me at a very fair price. Had a tree fall and hit the house, they were out the next morning to get it taken care of and even took out a few other questionable trees." },
+  { name: "Bill Loesel", text: "Cody and Casey were called in by our insurance agent - arrived less than 3 hours after the storm knocked most of a large tree into the driveway and somewhat on the house. They got it off the house and cut it all up in no time!" },
+  { name: "Alyssia Lamazza", text: "I had an exceptional experience with BH Tree Service! From the moment I reached out for a quote, their team was responsive and professional. The crew arrived on time and efficiently removed the tree from my yard." },
+];
+
+const servingAreas = [
+  "Berks County, PA", "Bucks County, PA", "Carbon County, PA", "Chester County, PA",
+  "Delaware County, PA", "Lancaster County, PA", "Lebanon County, PA", "Lehigh County, PA",
 ];
 
 const faqs = [
@@ -59,6 +76,11 @@ const faqs = [
 ];
 
 const Index = () => {
+  const [reviewPage, setReviewPage] = useState(0);
+  const reviewsPerPage = 3;
+  const totalPages = Math.ceil(googleReviews.length / reviewsPerPage);
+  const visibleReviews = googleReviews.slice(reviewPage * reviewsPerPage, (reviewPage + 1) * reviewsPerPage);
+
   return (
     <div>
       {/* Hero Section */}
@@ -109,7 +131,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Section - Image Cards */}
+      {/* Services Section */}
       <section className="section-padding bg-background">
         <div className="container-wide">
           <div className="mb-8">
@@ -121,17 +143,13 @@ const Index = () => {
               <div className="hidden md:block h-[3px] flex-1 bg-primary max-w-[200px]" />
             </div>
           </div>
-
-          {/* Top row: 3 cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
             {homeServices.slice(0, 3).map((s) => (
               <Link key={s.link} to={s.link} className="group relative overflow-hidden rounded-lg aspect-[4/3]">
                 <img src={s.image} alt={s.title} loading="lazy" width={800} height={512} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute top-3 left-3">
-                  <span className="bg-foreground text-background font-heading text-xs font-bold uppercase tracking-wider px-2.5 py-1">
-                    {s.title}
-                  </span>
+                  <span className="bg-foreground text-background font-heading text-xs font-bold uppercase tracking-wider px-2.5 py-1">{s.title}</span>
                 </div>
                 <div className="absolute bottom-4 left-4 flex items-center gap-1.5 text-primary-foreground font-heading text-sm font-bold uppercase tracking-wide group-hover:text-primary transition-colors">
                   View More <ArrowRight className="w-4 h-4" />
@@ -139,17 +157,13 @@ const Index = () => {
               </Link>
             ))}
           </div>
-
-          {/* Bottom row: 2 cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {homeServices.slice(3).map((s) => (
               <Link key={s.link} to={s.link} className="group relative overflow-hidden rounded-lg aspect-[4/3]">
                 <img src={s.image} alt={s.title} loading="lazy" width={800} height={512} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute top-3 left-3">
-                  <span className="bg-foreground text-background font-heading text-xs font-bold uppercase tracking-wider px-2.5 py-1">
-                    {s.title}
-                  </span>
+                  <span className="bg-foreground text-background font-heading text-xs font-bold uppercase tracking-wider px-2.5 py-1">{s.title}</span>
                 </div>
                 <div className="absolute bottom-4 left-4 flex items-center gap-1.5 text-primary-foreground font-heading text-sm font-bold uppercase tracking-wide group-hover:text-primary transition-colors">
                   View More <ArrowRight className="w-4 h-4" />
@@ -160,7 +174,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* See Our Work - Masonry Gallery */}
+      {/* See Our Work Gallery */}
       <section className="section-padding bg-background">
         <div className="container-wide">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-8">
@@ -180,27 +194,90 @@ const Index = () => {
               See All Photos <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
-
-          {/* Masonry-style grid */}
           <div className="columns-2 md:columns-3 lg:columns-4 gap-3 space-y-3">
             {galleryImages.map((img, i) => (
               <div key={i} className="break-inside-avoid overflow-hidden rounded-lg group">
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  loading="lazy"
-                  width={800}
-                  height={600}
-                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                <img src={img.src} alt={img.alt} loading="lazy" width={800} height={600} className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* Reviews Section */}
       <section className="section-padding bg-secondary">
+        <div className="container-wide">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-10">
+            <div>
+              <div className="inline-block bg-foreground text-background font-heading text-xs font-bold uppercase tracking-wider px-3 py-1.5 mb-2">
+                Discover What Our Customers Have To Say About Us
+              </div>
+              <div className="flex items-center gap-4">
+                <h2 className="font-heading text-3xl md:text-4xl font-bold uppercase text-foreground">Reviews</h2>
+                <div className="hidden md:block h-[3px] flex-1 bg-primary max-w-[200px]" />
+              </div>
+            </div>
+            <Link
+              to="/review-us"
+              className="mt-4 md:mt-0 inline-flex items-center gap-2 bg-foreground text-background font-heading text-xs font-bold uppercase px-5 py-2.5 rounded-sm hover:bg-primary hover:text-primary-foreground transition-colors tracking-wider"
+            >
+              Leave a Review <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+
+          {/* Review Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            {visibleReviews.map((review, i) => (
+              <div key={i} className="bg-card border border-border rounded-lg p-6">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="font-heading font-bold text-card-foreground">{review.name}</span>
+                  <FaGoogle className="w-4 h-4 text-primary" />
+                </div>
+                <div className="flex gap-0.5 mb-3">
+                  {[...Array(5)].map((_, j) => (
+                    <span key={j} className="text-yellow-400 text-sm">★</span>
+                  ))}
+                </div>
+                <p className="text-muted-foreground text-sm leading-relaxed">{review.text}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Pagination */}
+          <div className="flex items-center justify-center gap-3">
+            <button
+              onClick={() => setReviewPage(Math.max(0, reviewPage - 1))}
+              disabled={reviewPage === 0}
+              className="p-2 rounded-full border border-border hover:bg-muted transition-colors disabled:opacity-30"
+            >
+              <ChevronLeft className="w-5 h-5 text-foreground" />
+            </button>
+            {[...Array(totalPages)].map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setReviewPage(i)}
+                className={`w-8 h-8 rounded-full font-heading text-sm font-bold transition-colors ${
+                  i === reviewPage
+                    ? "bg-primary text-primary-foreground"
+                    : "border border-border text-muted-foreground hover:bg-muted"
+                }`}
+              >
+                {i + 1}
+              </button>
+            ))}
+            <button
+              onClick={() => setReviewPage(Math.min(totalPages - 1, reviewPage + 1))}
+              disabled={reviewPage === totalPages - 1}
+              className="p-2 rounded-full border border-border hover:bg-muted transition-colors disabled:opacity-30"
+            >
+              <ChevronRight className="w-5 h-5 text-foreground" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="section-padding bg-background">
         <div className="container-wide max-w-3xl">
           <h2 className="font-heading text-3xl md:text-4xl font-bold uppercase text-center text-foreground mb-12">Frequently Asked Questions</h2>
           <div className="space-y-4">
@@ -214,6 +291,44 @@ const Index = () => {
               </details>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Proudly Serving These Areas */}
+      <section className="section-padding bg-secondary">
+        <div className="container-wide text-center">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold uppercase text-foreground mb-10">Proudly Serving These Areas</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            {servingAreas.map((area) => (
+              <div key={area} className="bg-card border border-border rounded-lg px-4 py-3 font-heading text-sm font-semibold text-card-foreground">
+                {area}
+              </div>
+            ))}
+          </div>
+          <Link
+            to="/service-areas"
+            className="inline-flex items-center gap-2 bg-foreground text-background font-heading text-xs font-bold uppercase px-6 py-3 rounded-sm hover:bg-primary hover:text-primary-foreground transition-colors tracking-wider"
+          >
+            View All Service Areas <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="section-padding bg-primary">
+        <div className="container-wide text-center">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold uppercase text-primary-foreground mb-2">
+            Ready To Take The Next Step?
+          </h2>
+          <h3 className="font-heading text-3xl md:text-4xl font-extrabold uppercase text-primary-foreground mb-8">
+            Get A Free Quote Today!
+          </h3>
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 bg-background text-foreground font-heading text-sm font-bold uppercase px-8 py-4 rounded-sm hover:bg-foreground hover:text-background transition-colors tracking-wider"
+          >
+            Get Free Quote <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </section>
     </div>
