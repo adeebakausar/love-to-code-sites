@@ -216,54 +216,15 @@ const Index = () => {
             </Link>
           </div>
 
-          {/* Review Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            {visibleReviews.map((review, i) => (
-              <div key={i} className="bg-card border border-border rounded-lg p-6">
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="font-heading font-bold text-card-foreground">{review.name}</span>
-                  <FaGoogle className="w-4 h-4 text-primary" />
-                </div>
-                <div className="flex gap-0.5 mb-3">
-                  {[...Array(5)].map((_, j) => (
-                    <span key={j} className="text-yellow-400 text-sm">★</span>
-                  ))}
-                </div>
-                <p className="text-muted-foreground text-sm leading-relaxed">{review.text}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Pagination */}
-          <div className="flex items-center justify-center gap-3">
-            <button
-              onClick={() => setReviewPage(Math.max(0, reviewPage - 1))}
-              disabled={reviewPage === 0}
-              className="p-2 rounded-full border border-border hover:bg-muted transition-colors disabled:opacity-30"
-            >
-              <ChevronLeft className="w-5 h-5 text-foreground" />
-            </button>
-            {[...Array(totalPages)].map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setReviewPage(i)}
-                className={`w-8 h-8 rounded-full font-heading text-sm font-bold transition-colors ${
-                  i === reviewPage
-                    ? "bg-primary text-primary-foreground"
-                    : "border border-border text-muted-foreground hover:bg-muted"
-                }`}
-              >
-                {i + 1}
-              </button>
-            ))}
-            <button
-              onClick={() => setReviewPage(Math.min(totalPages - 1, reviewPage + 1))}
-              disabled={reviewPage === totalPages - 1}
-              className="p-2 rounded-full border border-border hover:bg-muted transition-colors disabled:opacity-30"
-            >
-              <ChevronRight className="w-5 h-5 text-foreground" />
-            </button>
-          </div>
+          {/* Review Widget */}
+          <iframe
+            className="lc_reviews_widget"
+            src="https://reputationhub.site/reputation/widgets/review_widget/6V45N8I3W9GiHwA5iEDb"
+            frameBorder="0"
+            scrolling="no"
+            style={{ minWidth: '100%', width: '100%' }}
+            title="Customer Reviews"
+          />
         </div>
       </section>
 
