@@ -11,11 +11,6 @@ const treeServices = [
   { title: "Emergency Tree Services", description: "24/7 emergency tree removal and cleanup services across Lancaster County, Pennsylvania.", link: "/tree-service/emergency", iconKey: "emergency" },
 ];
 
-const reviews = [
-  { name: "Taylor S", text: "Cannot thank these guys enough for cutting down a huge oak directly behind my house and on a mountain, even with all the negatives surrounding the location these guys made it look easy!" },
-  { name: "Monica Flamini", text: "Highly recommend for any needed tree/stump removal services. The team was professional and made quick and efficient work of the very large pine tree we needed removed." },
-  { name: "Bill Loesel", text: "Cody and Casey were called in by our insurance agent - arrived less than 3 hours after the storm knocked most of a large tree into the driveway. Super knowledgeable about all things trees." },
-];
 
 const TreeService = () => {
   return (
