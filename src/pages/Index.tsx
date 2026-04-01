@@ -1,7 +1,6 @@
-import { Shield, Clock, Users, Award, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { Shield, Clock, Users, Award, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import { FaGoogle } from "react-icons/fa";
+import { useEffect } from "react";
 import heroBg from "@/assets/hero-bg.jpg";
 import aboutImg from "@/assets/about-image.jpg";
 import serviceTree from "@/assets/service-tree.jpg";
