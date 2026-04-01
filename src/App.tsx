@@ -16,6 +16,7 @@ import ServiceAreas from "./pages/ServiceAreas.tsx";
 import ServiceAreaDetail from "./pages/ServiceAreaDetail.tsx";
 import ServiceDetail from "./pages/ServiceDetail.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import ReviewUs from "./pages/ReviewUs.tsx";
 
 const queryClient = new QueryClient();
 
