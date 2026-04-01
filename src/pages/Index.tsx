@@ -213,44 +213,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      {/* Proudly Serving These Areas */}
-      <section className="section-padding bg-secondary">
-        <div className="container-wide text-center">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold uppercase text-foreground mb-10">Proudly Serving These Areas</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            {servingAreas.map((area) => (
-              <div key={area} className="bg-card border border-border rounded-lg px-4 py-3 font-heading text-sm font-semibold text-card-foreground">
-                {area}
-              </div>
-            ))}
-          </div>
-          <Link
-            to="/service-areas"
-            className="inline-flex items-center gap-2 bg-foreground text-background font-heading text-xs font-bold uppercase px-6 py-3 rounded-sm hover:bg-primary hover:text-primary-foreground transition-colors tracking-wider"
-          >
-            View All Service Areas <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="section-padding bg-primary">
-        <div className="container-wide text-center">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold uppercase text-primary-foreground mb-2">
-            Ready To Take The Next Step?
-          </h2>
-          <h3 className="font-heading text-3xl md:text-4xl font-extrabold uppercase text-primary-foreground mb-8">
-            Get A Free Quote Today!
-          </h3>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 bg-background text-foreground font-heading text-sm font-bold uppercase px-8 py-4 rounded-sm hover:bg-foreground hover:text-background transition-colors tracking-wider"
-          >
-            Get Free Quote <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-      </section>
     </div>
   );
 };
