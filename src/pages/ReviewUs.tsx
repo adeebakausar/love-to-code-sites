@@ -1,7 +1,4 @@
 import { useState } from "react";
-import { ArrowRight } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import logo from "@/assets/logo.png";
 
 const ReviewUs = () => {
