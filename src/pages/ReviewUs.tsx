@@ -37,9 +37,7 @@ const ReviewUs = () => {
   );
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <main className="flex-1 bg-[#333] flex items-center justify-center py-20 px-4">
+    <div className="min-h-[80vh] bg-[#333] flex items-center justify-center py-20 px-4">
         {step === "rate" && (
           <div className="bg-background rounded-lg shadow-2xl max-w-md w-full overflow-hidden">
             <div className="bg-destructive text-destructive-foreground text-center py-3">
