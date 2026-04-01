@@ -82,9 +82,10 @@ const QuoteForm = () => {
         </p>
         <button
           type="submit"
-          className="w-full bg-primary text-primary-foreground font-heading text-xl font-bold py-4 rounded-md hover:opacity-90 transition-opacity uppercase tracking-wider"
+          disabled={submitting}
+          className="w-full bg-primary text-primary-foreground font-heading text-xl font-bold py-4 rounded-md hover:opacity-90 transition-opacity uppercase tracking-wider disabled:opacity-60"
         >
-          Send
+          {submitting ? "Sending..." : "Send"}
         </button>
       </form>
     </div>
