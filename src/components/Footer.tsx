@@ -36,10 +36,13 @@ const WaveDividerBottom = () => (
 );
 
 const Footer = () => {
-  const [reviewPage, setReviewPage] = useState(0);
-  const perPage = 3;
-  const totalPages = Math.ceil(reviews.length / perPage);
-  const currentReviews = reviews.slice(reviewPage * perPage, reviewPage * perPage + perPage);
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://reputationhub.site/reputation/assets/review-widget.js';
+    script.type = 'text/javascript';
+    document.body.appendChild(script);
+    return () => { document.body.removeChild(script); };
+  }, []);
 
   return (
     <footer>
@@ -73,56 +76,16 @@ const Footer = () => {
               </Link>
             </div>
 
-            {/* Review Cards */}
-            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              {currentReviews.map((review, i) => (
-                <div key={i} className="bg-background rounded-lg p-6 shadow-lg border border-border">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="text-primary font-bold text-lg">{review.rating}</span>
-                    <div className="flex">
-                      {[...Array(5)].map((_, s) => (
-                        <span key={s} className="text-yellow-400 text-lg">★</span>
-                      ))}
-                    </div>
-                  </div>
-                  <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
-                    {review.text}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-foreground font-medium text-sm">{review.name}</span>
-                    <FaGoogle className="w-5 h-5 text-muted-foreground" />
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Pagination */}
-            <div className="flex items-center justify-center gap-2 text-primary-foreground">
-              <button
-                onClick={() => setReviewPage(Math.max(0, reviewPage - 1))}
-                disabled={reviewPage === 0}
-                className="p-1 hover:text-primary disabled:opacity-30 transition-colors"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-              {[...Array(totalPages)].map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setReviewPage(i)}
-                  className={`w-7 h-7 text-sm font-bold rounded ${
-                    reviewPage === i ? "text-primary-foreground text-lg" : "text-primary-foreground/60 hover:text-primary-foreground"
-                  }`}
-                >
-                  {i + 1}
-                </button>
-              ))}
-              <button
-                onClick={() => setReviewPage(Math.min(totalPages - 1, reviewPage + 1))}
-                disabled={reviewPage === totalPages - 1}
-                className="p-1 hover:text-primary disabled:opacity-30 transition-colors"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
+            {/* Review Widget */}
+            <div className="max-w-6xl mx-auto">
+              <iframe
+                className="lc_reviews_widget"
+                src="https://reputationhub.site/reputation/widgets/review_widget/6V45N8I3W9GiHwA5iEDb"
+                frameBorder="0"
+                scrolling="no"
+                style={{ minWidth: '100%', width: '100%' }}
+                title="Customer Reviews"
+              />
             </div>
           </div>
           <WaveDividerBottom />
