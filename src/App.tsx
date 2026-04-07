@@ -21,6 +21,7 @@ import MarketingForm from "./pages/MarketingForm.tsx";
 import DiscountForm from "./pages/DiscountForm.tsx";
 import TermsAndConditions from "./pages/TermsAndConditions.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
+import Sitemap from "./pages/Sitemap.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 
 const queryClient = new QueryClient();
@@ -52,6 +53,7 @@ const App = () => (
             <Route path="/discount-form" element={<DiscountForm />} />
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/sitemap" element={<Sitemap />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
