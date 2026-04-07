@@ -35,7 +35,7 @@ const MarketingForm = () => {
   };
 
   return (
-    <section className="min-h-screen bg-white py-12 px-4">
+    <section className="min-h-screen bg-[#1a1008] py-12 px-4" style={{ background: 'radial-gradient(ellipse at top, #3d2a0a 0%, #1a1008 60%, #0d0804 100%)' }}>
       <div className="max-w-lg mx-auto">
         {/* Logo */}
         <div className="flex justify-center mb-8">
@@ -43,31 +43,31 @@ const MarketingForm = () => {
         </div>
 
         {/* Info Card */}
-        <div className="bg-[#2a2a2a] border border-primary/30 rounded-lg p-6 mb-8 text-white space-y-4">
+        <div className="rounded-lg p-6 mb-8 text-white space-y-4" style={{ background: 'linear-gradient(180deg, rgba(80,50,10,0.5) 0%, rgba(30,20,5,0.8) 100%)', border: '1px solid rgba(200,150,50,0.3)' }}>
           <p>
-            <span className="text-primary">1. ⭐</span> This will send out your{" "}
-            <strong>5 star review request funnel</strong> (gate keeping negative reviews)
+            <span className="text-amber-400">1. ⭐</span> This will send out your{" "}
+            <strong className="italic">5 star review request funnel</strong> (gate keeping negative reviews)
           </p>
-          <p className="text-sm text-muted-foreground pl-4">
+          <p className="text-sm text-gray-300 pl-4">
             - Customer will be reminded to leave you a 5 star review 4 times over a 4 week period
             (<em>*automation will stop if they leave a review*</em>)
           </p>
           <p className="mt-2">
-            <span className="text-primary">2. 📱</span> Customer will be put into your{" "}
+            <span className="text-amber-400">2. 📱</span> Customer will be put into your{" "}
             <strong>1 year follow up sequence</strong>
           </p>
-          <p className="text-sm text-muted-foreground pl-4">
+          <p className="text-sm text-gray-300 pl-4">
             - Customer will be texted every 2-3 months reminding them of your return customer
             discount + requesting referrals for the same discount
           </p>
-          <p className="font-bold mt-4">Fill in the information below 👇👇👇</p>
+          <p className="font-bold mt-4 text-amber-400">Fill in the information below 👇👇👇</p>
         </div>
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label className="block text-sm font-bold text-foreground mb-2">
-              Customer First Name <span className="text-destructive">*</span>
+            <label className="block text-sm font-bold text-white mb-2">
+              Customer First Name <span className="text-red-500">*</span>
             </label>
             <input
               type="text"
@@ -75,14 +75,14 @@ const MarketingForm = () => {
               placeholder="Customers First name (For example: John)"
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
-              className="w-full px-4 py-3 rounded-md bg-white text-foreground text-sm border border-primary/40 focus:ring-2 focus:ring-primary focus:border-primary outline-none"
+              className="w-full px-4 py-3 rounded-md bg-white text-gray-900 text-sm border-2 border-amber-600/60 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none"
             />
           </div>
 
           <div>
             <label className="block text-sm font-bold text-white mb-2">
               Phone (INCLUDE AREA CODE) - You will not be able to submit if # is typed wrong
-              <span className="text-destructive"> *</span>
+              <span className="text-red-500"> *</span>
             </label>
             <input
               type="tel"
@@ -92,14 +92,14 @@ const MarketingForm = () => {
               placeholder="Phone (For example: 8085551234)"
               value={form.phone}
               onChange={(e) => setForm({ ...form, phone: e.target.value })}
-              className="w-full px-4 py-3 rounded-md bg-white text-foreground text-sm border border-primary/40 focus:ring-2 focus:ring-primary focus:border-primary outline-none"
+              className="w-full px-4 py-3 rounded-md bg-white text-gray-900 text-sm border-2 border-amber-600/60 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none"
             />
           </div>
 
           <button
             type="submit"
             disabled={submitting}
-            className="w-full bg-primary text-primary-foreground font-heading text-2xl font-bold py-4 rounded-md hover:opacity-90 transition-opacity uppercase tracking-wider disabled:opacity-60"
+            className="w-full bg-amber-700 text-white font-heading text-2xl font-bold py-5 rounded-md hover:bg-amber-800 transition-colors uppercase tracking-wider disabled:opacity-60"
           >
             {submitting ? "Submitting..." : "Submit!"}
           </button>
