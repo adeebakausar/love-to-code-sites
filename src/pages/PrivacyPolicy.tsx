@@ -3,7 +3,7 @@ const PrivacyPolicy = () => {
     <section className="min-h-screen bg-white py-12 px-4">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-3xl font-heading font-bold text-foreground mb-2">Privacy Policy</h1>
-        <p className="text-lg font-semibold text-primary mb-6">BH Tree Service</p>
+        <p className="text-lg font-semibold text-primary mb-6">MedHealth Ultrasound</p>
 
         <div className="space-y-6 text-foreground/80 text-sm leading-relaxed">
           <p>

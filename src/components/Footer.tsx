@@ -1,193 +1,96 @@
 import { Link } from "react-router-dom";
-import { Phone, ArrowRight } from "lucide-react";
-import { FaGoogle } from "react-icons/fa";
-import { useEffect } from "react";
-import logo from "@/assets/logo.png";
-import heroBg from "@/assets/hero-bg.jpg";
-
-const serviceAreas = [
-  "Berks County", "Bucks County", "Carbon County", "Chester County",
-  "Delaware County", "Lancaster County", "Lebanon County", "Lehigh County",
-];
-
-
-const WaveDividerTop = () => (
-  <div className="w-full leading-[0] overflow-hidden">
-    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" className="w-full h-[50px] md:h-[70px] block">
-      <path d="M0,0 L0,40 Q360,100 720,40 Q1080,-20 1440,40 L1440,0 Z" fill="white" />
-    </svg>
-  </div>
-);
-
-const WaveDividerBottom = () => (
-  <div className="w-full leading-[0] overflow-hidden">
-    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" className="w-full h-[50px] md:h-[70px] block">
-      <path d="M0,60 Q360,0 720,60 Q1080,120 1440,60 L1440,100 L0,100 Z" fill="white" />
-    </svg>
-  </div>
-);
+import { Phone, Mail, MessageCircle, MapPin } from "lucide-react";
+import { FaFacebook, FaInstagram, FaGoogle } from "react-icons/fa";
+import logo from "@/assets/medhealth-logo.png";
 
 const Footer = () => {
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://reputationhub.site/reputation/assets/review-widget.js';
-    script.type = 'text/javascript';
-    document.body.appendChild(script);
-    return () => { document.body.removeChild(script); };
-  }, []);
-
   return (
-    <footer>
-
-      {/* ===== PROUDLY SERVING THESE AREAS ===== */}
-      <section className="bg-background py-16 md:py-20">
-        <div className="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10 md:gap-16">
-          <div className="w-full md:w-[420px] flex-shrink-0 rounded-lg overflow-hidden shadow-lg border border-border">
-            <iframe
-              title="BH Tree Service Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12200!2d-76.1765!3d40.0428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c63a1b3b7b3b3b%3A0x2b0e1c4b9b3b3b3b!2sBH%20Tree%20Service%20LLC!5e0!3m2!1sen!2sus!4v1700000000000"
-              width="100%"
-              height="340"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
-          <div>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold uppercase text-foreground leading-tight mb-8">
-              Proudly Serving<br />These Areas
-            </h2>
-            <div className="grid grid-cols-2 gap-x-16 gap-y-3 text-sm md:text-base text-foreground font-medium mb-8">
-              {serviceAreas.map((area) => (
-                <Link
-                  key={area}
-                  to={`/service-areas/${area.toLowerCase().replace(/ /g, "-")}`}
-                  className="hover:text-primary transition-colors"
-                >
-                  {area}, PA
-                </Link>
-              ))}
-            </div>
-            <Link
-              to="/service-areas"
-              className="inline-block bg-primary text-primary-foreground font-heading text-sm font-bold px-8 py-3 rounded hover:opacity-90 transition-opacity uppercase tracking-wide"
-            >
-              View All Service Areas
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== CTA SECTION ===== */}
-      <div className="relative">
-        <div
-          className="relative bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroBg})` }}
-        >
-          <div className="absolute inset-0 bg-[hsl(var(--hero-overlay))]/50" />
-          <WaveDividerTop />
-          <div className="relative z-10 text-center px-4 py-12 md:py-16">
-            <h2 className="font-heading text-3xl md:text-4xl font-black uppercase text-primary-foreground italic mb-2">
-              Ready to Take the Next Step?
-            </h2>
-            <h2 className="font-heading text-3xl md:text-4xl font-black uppercase text-primary-foreground italic mb-8">
-              Get a Free Quote Today!
-            </h2>
-            <Link
-              to="/contact"
-              className="inline-block bg-primary text-primary-foreground font-heading text-sm font-bold px-10 py-3.5 rounded hover:opacity-90 transition-opacity uppercase tracking-wide"
-            >
-              Get a Free Quote
-            </Link>
-          </div>
-          <WaveDividerBottom />
-        </div>
-      </div>
-
-      {/* ===== BOTTOM FOOTER ===== */}
-      <div className="bg-background px-4 py-14 md:px-8 lg:px-16">
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8">
+    <footer className="bg-section-dark text-section-dark-foreground">
+      <div className="container-wide px-4 py-14 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Company */}
-          <div className="col-span-2 md:col-span-1">
-            <h4 className="font-heading text-sm font-bold uppercase text-foreground mb-4 tracking-wider">Company</h4>
-            <img src={logo} alt="BH Tree Service" className="h-20 w-auto mb-3" />
-            <a href="tel:16103245372" className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors mb-4">
-              <Phone className="w-3.5 h-3.5" /> (610) 324-5372
-            </a>
-            <a href="#" className="inline-block">
-              <FaGoogle className="w-6 h-6 text-muted-foreground hover:text-primary transition-colors" />
-            </a>
+          <div>
+            <img src={logo} alt="MedHealth Ultrasound" className="h-14 w-auto mb-4" />
+            <p className="text-sm text-section-dark-foreground/70 leading-relaxed mb-4">
+              Private ultrasound scans in Portsmouth, Southampton & Chichester. Fast, expert care with no GP referral needed.
+            </p>
+            <div className="flex gap-3">
+              <a href="https://maps.app.goo.gl/aE2G81invnkYPtDa7" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-section-dark-foreground/10 flex items-center justify-center hover:bg-accent transition-colors">
+                <FaGoogle className="w-4 h-4" />
+              </a>
+              <a href="#" className="w-9 h-9 rounded-full bg-section-dark-foreground/10 flex items-center justify-center hover:bg-accent transition-colors">
+                <FaFacebook className="w-4 h-4" />
+              </a>
+              <a href="#" className="w-9 h-9 rounded-full bg-section-dark-foreground/10 flex items-center justify-center hover:bg-accent transition-colors">
+                <FaInstagram className="w-4 h-4" />
+              </a>
+            </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Services */}
           <div>
-            <h4 className="font-heading text-sm font-bold uppercase text-foreground mb-4 tracking-wider">Quick Links</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link to="/" className="hover:text-primary transition-colors">Home</Link></li>
-              <li><Link to="/tree-service" className="hover:text-primary transition-colors">Services</Link></li>
-              <li><Link to="/gallery" className="hover:text-primary transition-colors">Projects</Link></li>
-              <li><Link to="/service-areas" className="hover:text-primary transition-colors">Service Areas</Link></li>
-              <li><Link to="/about" className="hover:text-primary transition-colors">About Us</Link></li>
-              <li><Link to="/contact" className="hover:text-primary transition-colors">Blog</Link></li>
-              <li><Link to="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
-              <li><Link to="/contact" className="hover:text-primary transition-colors">Review Us</Link></li>
+            <h4 className="font-heading text-sm font-bold uppercase tracking-wider mb-4">Services</h4>
+            <ul className="space-y-2 text-sm text-section-dark-foreground/70">
+              <li><Link to="/services/endometriosis-scan" className="hover:text-accent transition-colors">Endometriosis Scan</Link></li>
+              <li><Link to="/services/womens-health" className="hover:text-accent transition-colors">Women's Health Scans</Link></li>
+              <li><Link to="/services/mens-health" className="hover:text-accent transition-colors">Men's Health Scans</Link></li>
+              <li><Link to="/services/health-checks" className="hover:text-accent transition-colors">Wellness Health Checks</Link></li>
+              <li><Link to="/corporate-wellness" className="hover:text-accent transition-colors">Corporate Wellness</Link></li>
             </ul>
           </div>
 
-          {/* Our Services */}
+          {/* Locations */}
           <div>
-            <h4 className="font-heading text-sm font-bold uppercase text-foreground mb-4 tracking-wider">Our Services</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link to="/tree-service" className="hover:text-primary transition-colors">Tree Service</Link></li>
-              <li><Link to="/land-clearing" className="hover:text-primary transition-colors">Land Clearing Service</Link></li>
-              <li><Link to="/drainage" className="hover:text-primary transition-colors">Drainage Service</Link></li>
+            <h4 className="font-heading text-sm font-bold uppercase tracking-wider mb-4">Locations</h4>
+            <ul className="space-y-2 text-sm text-section-dark-foreground/70">
+              <li><Link to="/locations/portsmouth" className="hover:text-accent transition-colors">Portsmouth</Link></li>
+              <li><Link to="/locations/southampton" className="hover:text-accent transition-colors">Southampton</Link></li>
+              <li><Link to="/locations/chichester" className="hover:text-accent transition-colors">Chichester</Link></li>
+            </ul>
+            <h4 className="font-heading text-sm font-bold uppercase tracking-wider mt-6 mb-4">Quick Links</h4>
+            <ul className="space-y-2 text-sm text-section-dark-foreground/70">
+              <li><Link to="/contact" className="hover:text-accent transition-colors">Contact</Link></li>
+              <li><Link to="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/terms-and-conditions" className="hover:text-accent transition-colors">Terms & Conditions</Link></li>
             </ul>
           </div>
 
-          {/* Service Areas */}
+          {/* Contact */}
           <div>
-            <h4 className="font-heading text-sm font-bold uppercase text-foreground mb-4 tracking-wider">Service Areas</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              {serviceAreas.map((area) => (
-                <li key={area}>
-                  <Link to={`/service-areas/${area.toLowerCase().replace(/ /g, "-")}`} className="hover:text-primary transition-colors">
-                    {area}, PA
-                  </Link>
-                </li>
-              ))}
+            <h4 className="font-heading text-sm font-bold uppercase tracking-wider mb-4">Contact</h4>
+            <ul className="space-y-3 text-sm text-section-dark-foreground/70">
+              <li className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-accent" />
+                <a href="tel:02381684646" className="hover:text-accent transition-colors">023 8168 4646</a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-accent" />
+                <a href="mailto:contact@medhealthultrasound.co.uk" className="hover:text-accent transition-colors text-xs">contact@medhealthultrasound.co.uk</a>
+              </li>
+              <li className="flex items-center gap-2">
+                <MessageCircle className="w-4 h-4 text-accent" />
+                <a href="https://wa.me/447725489074" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">WhatsApp Us</a>
+              </li>
+              <li className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                <span>112 Milton Road, Portsmouth, PO3 6AR</span>
+              </li>
             </ul>
-          </div>
-
-          {/* Operating Hours */}
-          <div>
-            <h4 className="font-heading text-sm font-bold uppercase text-foreground mb-4 tracking-wider">Operating Hours</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Mon: 7:00 Am - 3:00 Pm</li>
-              <li>Tue: 7:00 Am - 3:00 Pm</li>
-              <li>Wed: 7:00 Am - 3:00 Pm</li>
-              <li>Thu: 7:00 Am - 3:00 Pm</li>
-              <li>Fri: 7:00 Am - 3:00 Pm</li>
-              <li>Sat: Closed - Closed</li>
-              <li>Sun: Closed - Closed</li>
-            </ul>
+            <p className="text-xs text-section-dark-foreground/50 mt-4">Mon–Sun: 09:00–17:00</p>
           </div>
         </div>
       </div>
 
-      {/* ===== COPYRIGHT BAR ===== */}
-      <div className="border-t-2 border-primary mx-4 md:mx-16" />
-      <div className="px-4 md:px-16 py-4 flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto">
-        <div className="flex gap-8 text-sm font-medium text-foreground">
-          <Link to="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
-          <Link to="/terms" className="hover:text-primary transition-colors">Terms & Conditions</Link>
+      <div className="border-t border-section-dark-foreground/10">
+        <div className="container-wide px-4 py-4 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-3">
+          <p className="text-xs text-section-dark-foreground/50">
+            © {new Date().getFullYear()} MEDHEALTH ULTRASOUND LTD. Company number 16783001. All rights reserved.
+          </p>
+          <div className="flex gap-6 text-xs text-section-dark-foreground/50">
+            <Link to="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</Link>
+            <Link to="/terms-and-conditions" className="hover:text-accent transition-colors">Terms & Conditions</Link>
+          </div>
         </div>
-        <Link
-          to="/contact"
-          className="mt-3 md:mt-0 inline-block bg-primary text-primary-foreground font-heading text-xs font-bold px-6 py-2.5 rounded hover:opacity-90 transition-opacity uppercase tracking-wider"
-        >
-          Get Free Quote
-        </Link>
       </div>
     </footer>
   );
