@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,37 +7,37 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 0 0% 13%;
+    --foreground: 207 76% 16%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 13%;
+    --card-foreground: 207 76% 16%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 13%;
+    --popover-foreground: 207 76% 16%;
 
-    --primary: 145 63% 32%;
+    --primary: 201 82% 26%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 13%;
+    --secondary: 180 25% 95%;
+    --secondary-foreground: 207 76% 16%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 145 63% 32%;
+    --accent: 174 42% 51%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 145 63% 32%;
+    --border: 214 20% 90%;
+    --input: 214 20% 90%;
+    --ring: 201 82% 26%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --hero-overlay: 0 0% 0%;
-    --section-dark: 0 0% 13%;
+    --hero-overlay: 207 76% 10%;
+    --section-dark: 207 76% 16%;
     --section-dark-foreground: 0 0% 100%;
 
     --sidebar-background: 0 0% 98%;
@@ -51,25 +51,25 @@
   }
 
   .dark {
-    --background: 0 0% 7%;
+    --background: 207 76% 8%;
     --foreground: 0 0% 95%;
-    --card: 0 0% 10%;
+    --card: 207 50% 12%;
     --card-foreground: 0 0% 95%;
-    --popover: 0 0% 10%;
+    --popover: 207 50% 12%;
     --popover-foreground: 0 0% 95%;
-    --primary: 145 63% 42%;
+    --primary: 201 82% 40%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 0 0% 15%;
+    --secondary: 207 30% 18%;
     --secondary-foreground: 0 0% 95%;
-    --muted: 0 0% 15%;
+    --muted: 207 30% 18%;
     --muted-foreground: 0 0% 65%;
-    --accent: 145 63% 42%;
+    --accent: 174 42% 51%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 95%;
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 145 63% 42%;
+    --border: 207 30% 22%;
+    --input: 207 30% 22%;
+    --ring: 201 82% 40%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -109,7 +109,7 @@
   }
 
   .hero-overlay {
-    @apply absolute inset-0 bg-hero-overlay/60;
+    @apply absolute inset-0 bg-hero-overlay/70;
   }
 
   .wave-divider {

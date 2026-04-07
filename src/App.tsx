@@ -5,24 +5,18 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Index from "./pages/Index.tsx";
-import TreeService from "./pages/TreeService.tsx";
-import LandClearing from "./pages/LandClearing.tsx";
-import Drainage from "./pages/Drainage.tsx";
-import About from "./pages/About.tsx";
-import Contact from "./pages/Contact.tsx";
-import Gallery from "./pages/Gallery.tsx";
-import ServiceAreas from "./pages/ServiceAreas.tsx";
-import ServiceAreaDetail from "./pages/ServiceAreaDetail.tsx";
-import ServiceDetail from "./pages/ServiceDetail.tsx";
-import NotFound from "./pages/NotFound.tsx";
-import ReviewUs from "./pages/ReviewUs.tsx";
-import MarketingForm from "./pages/MarketingForm.tsx";
-import DiscountForm from "./pages/DiscountForm.tsx";
-import TermsAndConditions from "./pages/TermsAndConditions.tsx";
-import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
-import Sitemap from "./pages/Sitemap.tsx";
-import ScrollToTop from "./components/ScrollToTop.tsx";
+import Index from "./pages/Index";
+import EndometriosisScan from "./pages/EndometriosisScan";
+import WomensHealth from "./pages/WomensHealth";
+import MensHealth from "./pages/MensHealth";
+import HealthChecks from "./pages/HealthChecks";
+import CorporateWellness from "./pages/CorporateWellness";
+import LocationPage from "./pages/Locations";
+import Contact from "./pages/Contact";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import NotFound from "./pages/NotFound";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -37,23 +31,15 @@ const App = () => (
         <main className="pt-[72px]">
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/tree-service" element={<TreeService />} />
-            <Route path="/tree-service/:slug" element={<ServiceDetail />} />
-            <Route path="/land-clearing" element={<LandClearing />} />
-            <Route path="/land-clearing/:slug" element={<ServiceDetail />} />
-            <Route path="/drainage" element={<Drainage />} />
-            <Route path="/drainage/:slug" element={<ServiceDetail />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/services/endometriosis-scan" element={<EndometriosisScan />} />
+            <Route path="/services/womens-health" element={<WomensHealth />} />
+            <Route path="/services/mens-health" element={<MensHealth />} />
+            <Route path="/services/health-checks" element={<HealthChecks />} />
+            <Route path="/corporate-wellness" element={<CorporateWellness />} />
+            <Route path="/locations/:location" element={<LocationPage />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/service-areas" element={<ServiceAreas />} />
-            <Route path="/service-areas/:area" element={<ServiceAreaDetail />} />
-            <Route path="/review-us" element={<ReviewUs />} />
-            <Route path="/marketing-form" element={<MarketingForm />} />
-            <Route path="/discount-form" element={<DiscountForm />} />
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/sitemap" element={<Sitemap />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
