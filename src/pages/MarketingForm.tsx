@@ -35,7 +35,7 @@ const MarketingForm = () => {
   };
 
   return (
-    <section className="min-h-screen bg-[#1a1a1a] py-12 px-4">
+    <section className="min-h-screen bg-white py-12 px-4">
       <div className="max-w-lg mx-auto">
         {/* Logo */}
         <div className="flex justify-center mb-8">
