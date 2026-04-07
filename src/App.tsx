@@ -17,6 +17,7 @@ import ServiceAreaDetail from "./pages/ServiceAreaDetail.tsx";
 import ServiceDetail from "./pages/ServiceDetail.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ReviewUs from "./pages/ReviewUs.tsx";
+import MarketingForm from "./pages/MarketingForm.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 
 const queryClient = new QueryClient();
@@ -44,6 +45,7 @@ const App = () => (
             <Route path="/service-areas" element={<ServiceAreas />} />
             <Route path="/service-areas/:area" element={<ServiceAreaDetail />} />
             <Route path="/review-us" element={<ReviewUs />} />
+            <Route path="/marketing-form" element={<MarketingForm />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
