@@ -35,8 +35,8 @@ const MarketingForm = () => {
   };
 
   return (
-    <section className="min-h-screen bg-[#1a1008] py-12 px-4" style={{ background: 'radial-gradient(ellipse at top, #3d2a0a 0%, #1a1008 60%, #0d0804 100%)' }}>
-      <div className="max-w-lg mx-auto">
+    <section className="min-h-screen bg-white py-12 px-4">
+      <div className="max-w-lg mx-auto rounded-xl p-8" style={{ background: 'radial-gradient(ellipse at top, #3d2a0a 0%, #1a1008 60%, #0d0804 100%)' }}>
         {/* Logo */}
         <div className="flex justify-center mb-8">
           <img src={logo} alt="BH Tree Service" className="h-20 w-auto" />
