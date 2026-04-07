@@ -18,6 +18,7 @@ import ServiceDetail from "./pages/ServiceDetail.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ReviewUs from "./pages/ReviewUs.tsx";
 import MarketingForm from "./pages/MarketingForm.tsx";
+import DiscountForm from "./pages/DiscountForm.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 
 const queryClient = new QueryClient();
