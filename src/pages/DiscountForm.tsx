@@ -36,7 +36,7 @@ const DiscountForm = () => {
   };
 
   return (
-    <section className="min-h-screen bg-[#0f1117] py-12 px-4">
+    <section className="min-h-screen bg-white py-12 px-4">
       <div className="max-w-md mx-auto">
         {/* Logo / Company Name */}
         <div className="flex justify-center mb-2">
@@ -47,7 +47,7 @@ const DiscountForm = () => {
         </h2>
 
         {/* Form Card */}
-        <div className="bg-[#1a1d2e] rounded-xl p-6 md:p-8">
+        <div className="bg-[#1a1d2e] rounded-xl p-6 md:p-8 shadow-lg">
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
               <label className="block text-sm font-bold text-white mb-2">
