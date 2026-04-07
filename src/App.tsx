@@ -47,6 +47,7 @@ const App = () => (
             <Route path="/service-areas/:area" element={<ServiceAreaDetail />} />
             <Route path="/review-us" element={<ReviewUs />} />
             <Route path="/marketing-form" element={<MarketingForm />} />
+            <Route path="/discount-form" element={<DiscountForm />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
