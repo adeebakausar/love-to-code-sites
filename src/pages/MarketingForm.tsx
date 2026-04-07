@@ -35,7 +35,7 @@ const MarketingForm = () => {
   };
 
   return (
-    <section className="min-h-screen bg-background py-12 px-4">
+    <section className="min-h-screen bg-[#1a1a1a] py-12 px-4">
       <div className="max-w-lg mx-auto">
         {/* Logo */}
         <div className="flex justify-center mb-8">
@@ -43,7 +43,7 @@ const MarketingForm = () => {
         </div>
 
         {/* Info Card */}
-        <div className="bg-foreground/5 border border-primary/30 rounded-lg p-6 mb-8 text-foreground space-y-4">
+        <div className="bg-[#2a2a2a] border border-primary/30 rounded-lg p-6 mb-8 text-white space-y-4">
           <p>
             <span className="text-primary">1. ⭐</span> This will send out your{" "}
             <strong>5 star review request funnel</strong> (gate keeping negative reviews)
@@ -75,12 +75,12 @@ const MarketingForm = () => {
               placeholder="Customers First name (For example: John)"
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
-              className="w-full px-4 py-3 rounded-md bg-card text-foreground text-sm border border-primary/40 focus:ring-2 focus:ring-primary focus:border-primary outline-none"
+              className="w-full px-4 py-3 rounded-md bg-white text-foreground text-sm border border-primary/40 focus:ring-2 focus:ring-primary focus:border-primary outline-none"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-bold text-foreground mb-2">
+            <label className="block text-sm font-bold text-white mb-2">
               Phone (INCLUDE AREA CODE) - You will not be able to submit if # is typed wrong
               <span className="text-destructive"> *</span>
             </label>
@@ -92,7 +92,7 @@ const MarketingForm = () => {
               placeholder="Phone (For example: 8085551234)"
               value={form.phone}
               onChange={(e) => setForm({ ...form, phone: e.target.value })}
-              className="w-full px-4 py-3 rounded-md bg-card text-foreground text-sm border border-primary/40 focus:ring-2 focus:ring-primary focus:border-primary outline-none"
+              className="w-full px-4 py-3 rounded-md bg-white text-foreground text-sm border border-primary/40 focus:ring-2 focus:ring-primary focus:border-primary outline-none"
             />
           </div>
 
